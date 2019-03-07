@@ -5,50 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>登录页面</title>
+    <title>登录框</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="stylesheet" href="https://at.alicdn.com/t/font_822666_0m5h2rwzsvw.css" />
-    <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-    <main>
-        <header class="float-on">
-            <a href="#" class="iconfont icon-wodeh"></a>
+    <div class="cover">
+        <header>
+            <a href="#" class="fa iconfont icon-wodeh"></a>
         </header>
-        <div class="foo denglu">
-            <div class="fer alr">
-                <div class="top float-on">
-                    <a href="#" class="denglu aftor">登录</a>
-                    <a href="#" class="zhuce">注册</a>
-                    <span class="clone iconfont icon-icon-close"></span>
+        <div class="centent ding">
+            <div class="foo fool">
+                <span class="fa close iconfont icon-icon-close"></span>
+                <div class="icon">
+                    <a href="#" class="ling actva">登录</a>
+                    <a href="#" class="ding">注册</a>
                 </div>
-                <form action="get">
-                    <span class="iconfont icon-icon-my"></span>
-                    <input type="text" class="kuang" placeholder="用户名"><br/>
-                    <span class="iconfont icon-icon-lock"></span>
-                    <input type="text" class="kuang" placeholder="密码"><br/>
-                    <input type="submit" class="btn" value="登录">
+                <form action="post" class="form">
+                    <span class="fa iconfont icon-icon-my"></span>
+                    <input type="text" class="inpu" placeholder="用户名"><br/>
+                    <span class="fa iconfont icon-icon-lock"></span>
+                    <input type="text" class="inpu" placeholder="密码"><br/>
+                    <input type="submit" class="sub">
                 </form>
             </div>
-            <div class="fer all">
-                <div class="top float-on">
-                    <a href="#" class="denglu">登录</a>
-                    <a href="#" class="zhuce aftor">注册</a>
-                    <span class="clone iconfont icon-icon-close"></span>
+            <div class="foo foor">
+                <span class="fa close iconfont icon-icon-close"></span>
+                <div class="icon">
+                    <a href="#" class="ling">登录</a>
+                    <a href="#" class="ding  actva">注册</a>
                 </div>
-                <form action="get">
-                    <span class="iconfont icon-icon-my"></span>
-                    <input type="text" class="kuang" placeholder="用户名"><br/>
-                    <span class="iconfont icon-icon-lock"></span>
-                    <input type="text" class="kuang" placeholder="输入密码"><br/>
-                    <span class="iconfont icon-icon-lock"></span>
-                    <input type="text" class="kuang" placeholder="确认密码"><br/>
-                    <input type="submit" class="btn" value="注册">
+                <form action="post" class="form">
+                    <span class="fa iconfont icon-icon-my"></span>
+                    <input type="text" class="inpu" placeholder="请输入用户名"><br/>
+                    <span class="fa iconfont icon-icon-lock"></span>
+                    <input type="text" class="inpu" placeholder="请输入密码"><br/>
+                    <span class="fa iconfont icon-icon-lock"></span>
+                    <input type="text" class="inpu" placeholder="请再次输入密码"><br/>
+                    <input type="submit" class="sub">
                 </form>
             </div>
         </div>
-    </main>
-    <script>
+    </div>
+    <script type="text/javascript">
         function $(selector) {
             return document.querySelector(selector)
         }
@@ -57,30 +57,38 @@
             return document.querySelectorAll(selector)
         }
 
-        $('header').onclick = function(e) {
+        /*$$('.foo .ding').forEach(function(e) {
+            e.onclick = function() {
+                $('.centent').classList.remove('ding')
+                $('.centent').classList.add('ling')
+            }
+        })
+        $$('.foo .ling').forEach(function(e) {
+            e.onclick = function() {
+                $('.centent').classList.add('ding')
+                $('.centent').classList.remove('ling')
+            }
+        })*/
+
+        $('header .fa').onclick = function(e) {
             e.stopPropagation()
-            $('.foo').style.display = 'block'
+            $('.centent').style.display = 'block'
         }
 
-        $('.foo').addEventListener('click', function(e) {
+        $('.centent').addEventListener('click', function(e) {
             e.stopPropagation()
-
-            if (e.target.classList.contains('denglu')) {
-                $('.foo').classList.remove('denglu')
-                $('.foo').classList.add('zhuce')
+            if (e.target.classList.contains('ding')) {
+                $('.centent').classList.remove('ding')
+                $('.centent').classList.add('ling')
             }
-            if (e.target.classList.contains('zhuce')) {
-                $('.foo').classList.remove('zhuce')
-                $('.foo').classList.add('denglu')
+            if (e.target.classList.contains('ling')) {
+                $('.centent').classList.remove('ling')
+                $('.centent').classList.add('ding')
             }
-            if (e.target.classList.contains('clone')) {
-                $('.foo').style.display = 'none'
+            if (e.target.classList.contains('close')) {
+                $('.centent').style.display = 'none'
             }
         })
         document.addEventListener('click', function() {
-            $('.foo').style.display = 'none'
+            $('.centent').style.display = 'none'
         })
-    </script>
-</body>
-
-</html>
